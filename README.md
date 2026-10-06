@@ -1,7 +1,7 @@
-# Fish Club Pixi — browser build
+# Fish Club — browser build
 
-Public browser build of Fish Club. Source code is maintained in a separate private repository.
+PixiJS client for the fsc1 test RGS emulator at wss://wss.polishchuk.com/nonstop-ws. The server reports test/demo mode and FUN credits. No user cookies, captured signin tokens, TypeScript sources or source maps are included.
 
-This build uses a local demo with FUN credits, not the production game server. Serve this directory over HTTP; opening index.html directly via file:// is not supported.
+Play: https://vadimbrainshell-sketch.github.io/Fish-Club-build/
 
-The JavaScript, images, audio and animation data in a public web build are downloadable. This repository intentionally contains no TypeScript source, source maps, environment files or node_modules.
+Source is maintained in a separate private repository. The local offline demo remains available from the source project. Session restoration after reload is not implemented.
