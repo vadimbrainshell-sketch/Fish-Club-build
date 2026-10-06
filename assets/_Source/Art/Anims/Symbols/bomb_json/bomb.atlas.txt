@@ -1,0 +1,9 @@
+bomb.webp
+size:1024,512
+filter:Linear,Linear
+pma:true
+bomb/bomb
+bounds:2,2,497,492
+glow2
+bounds:501,371,123,123
+offsets:63,67,250,257

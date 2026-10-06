@@ -1,0 +1,13 @@
+matrix.webp
+size:1024,256
+filter:Linear,Linear
+pma:true
+fishing_rod
+bounds:422,9,542,234
+fishnet
+bounds:42,2,241,411
+rotate:90
+float
+bounds:2,7,57,236
+tail
+bounds:612,88,163,155
