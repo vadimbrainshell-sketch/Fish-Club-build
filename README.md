@@ -15,3 +15,5 @@ Latest update (November 1, 2026):
 Validation: 111 automated tests, including the actual fish-background Spine data and uneven-frame reel settlement, TypeScript and production build. Browser profiling in this session was affected by heavy host load and WebGL context loss; a stable frame rate and a complete interactive rerun were not confirmed. Physical iPhone validation and unfinished-session restoration remain outstanding.
 
 No captured signin tokens, user cookies, TypeScript sources or source maps are included. Source and technical continuation notes are maintained separately.
+
+Latest shader refinement: the water effect shares identical ripple calculations between temporal samples, keeping four texture samples and the same rendering resolution. The performance panel now displays the WebGL GPU device name. TypeScript and production build passed; the three panel tests passed. FPS improvement is not yet measured.
