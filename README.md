@@ -17,3 +17,5 @@ Validation: 111 automated tests, including the actual fish-background Spine data
 No captured signin tokens, user cookies, TypeScript sources or source maps are included. Source and technical continuation notes are maintained separately.
 
 Latest shader refinement: the water effect shares identical ripple calculations between temporal samples, keeping four texture samples and the same rendering resolution. The performance panel now displays the WebGL GPU device name. TypeScript and production build passed; the three panel tests passed. FPS improvement is not yet measured.
+
+GPU selection refinement: WebGL now requests `powerPreference: high-performance`. This is a browser hint; inspect GPU device after a full reload to verify adapter selection. No rendering-quality, resolution or antialias settings were changed by this refinement.
