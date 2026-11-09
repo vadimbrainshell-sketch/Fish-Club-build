@@ -31,3 +31,7 @@ Further fixes (November 10, 2026):
 - The left SOCKET LOG panel captures inbound/outbound frames and connection/runtime errors locally, including rejected frames and socket close code/reason. Pause, Clear, Hide and Save JSONL are available. History is bounded to 500 records / 2 MiB; the panel shows the latest 100. Credentials are masked. Connection lost also shows the actual fault and offers log export.
 
 Validation: all 126 automated tests passed, plus a repeated focused check for minimal cashout without wallet. Final TypeScript/production RGS build passed. Computer Use remains disabled. The user's original Connection lost reason cannot be confirmed until its wire frame or close code is captured; real-money cashout was not exercised.
+
+Confirmed Collect protocol fix (November 10, 2026): fsc1 returns manual cashout payouts in events[type=cashout].win with total:{bet:0}, omitting total.win. The client previously rejected that valid receipt and closed its own socket. Validation now accepts an explicit total.win or the unique explicit cashout-event win, including zero; it never derives settlement from regular fish wins, possible_win or wallet differences. UI normalization uses that same server payout.
+
+Validation: all 129 automated tests passed, TypeScript and production build passed. Offline replay of the supplied 146-record session accepted all 69 bet replies, including the cashout, with no faults and a connected socket. No live monetary requests were made. User logs, opaque contexts and credentials are not included in this repository.
