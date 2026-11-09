@@ -19,3 +19,7 @@ No captured signin tokens, user cookies, TypeScript sources or source maps are i
 Latest shader refinement: the water effect shares identical ripple calculations between temporal samples, keeping four texture samples and the same rendering resolution. The performance panel now displays the WebGL GPU device name. TypeScript and production build passed; the three panel tests passed. FPS improvement is not yet measured.
 
 GPU selection refinement: WebGL now requests `powerPreference: high-performance`. This is a browser hint; inspect GPU device after a full reload to verify adapter selection. No rendering-quality, resolution or antialias settings were changed by this refinement.
+
+Bug fixes (November 10, 2026): captions reset on pooled-symbol reuse; the tail plays on completed spins with a 30% cosmetic chance; the bonus reward counts up using the final server payout, including terminal receipts with zero placeholders; stopped-cell borders use four preallocated rope Spine parts and stop CPU updates when their animation ends. Shared cell borders are drawn once without stencil masks. Raw Spine frame parts are included in performance counters.
+
+Validation: 116 automated tests passed, including caption reuse, real bonus reward count-up, tail probability and rope lifecycle; TypeScript and the production RGS build passed. Computer Use remains disabled; live visual inspection of the new rope layout is pending.
