@@ -41,3 +41,10 @@ Bonus result and exit lifecycle (November 10, 2026): terminal fsc1 bonus receipt
 Bonus exit now clears HUD captions/flights and line effects, releases settled bonus symbols through the shared pool, empties bonus cells/locks/frames, resets retrigger state and closes reward animation/audio resources during the curtain. Retained base symbols resume in idle rather than continuing frozen landing/fade. All Spine objects are constructed with autoUpdate:false. Turquoise highlighting and visual resolution are preserved.
 
 Validation: all 134 tests, TypeScript and production build passed. A real Spine hidden behind an inactive bonus root received no updates over 600 frames and had no independent ticker subscription. Thirty repeated exits with the real SymbolPoolService produced no prefab growth after warmup. These checks establish lifecycle behavior; they do not measure browser FPS or prove the original FPS cause.
+
+Suspense presentation (November 11, 2026):
+- A transform-only camera gently zooms up to 1.14x toward a lingering tail of 1–3 spinning cells. It waits for a genuinely long stop, eases back afterward and resets on modals/resize. Ordinary reel timing, results and requests are unchanged. No extra WebGL filters or render targets are added.
+- The circular iris is replaced by an inline vector fish-skeleton sprite aperture. The viewport-sized SVG luminance mask shrinks to fully closed before the scene swap, then opens again, retaining the existing transition durations. Portrait/landscape coverage is preserved.
+- Bonus Buy now starts the existing matrix bounce on each actual cell stop. The normal BounceSystem applies the same authored duration/curve as regular spins; cells are locked and frames presented after bounce completion, and bonus entry waits for the final bounce.
+
+Validation: all 139 automated tests, TypeScript and production RGS build passed. Tests cover camera activation/reset, complete fish aperture closure/coverage, and the real BounceSystem during purchase. The new sprite was inspected using a local SVG thumbnail. Computer Use and live monetary gameplay were not used.
