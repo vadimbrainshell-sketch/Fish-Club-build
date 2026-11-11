@@ -48,3 +48,9 @@ Suspense presentation (November 11, 2026):
 - Bonus Buy now starts the existing matrix bounce on each actual cell stop. The normal BounceSystem applies the same authored duration/curve as regular spins; cells are locked and frames presented after bounce completion, and bonus entry waits for the final bounce.
 
 Validation: all 139 automated tests, TypeScript and production RGS build passed. Tests cover camera activation/reset, complete fish aperture closure/coverage, and the real BounceSystem during purchase. The new sprite was inspected using a local SVG thumbnail. Computer Use and live monetary gameplay were not used.
+
+Refined camera focus (November 11, 2026): the zoom now stays at viewport centre with no cell tracking/pan. The zoom delta is 30% smaller (maximum 1.098x instead of 1.14x); both zoom-in and return durations are 20% longer. A reusable four-corner soft vignette darkens and blurs only the corners during focus, sits below controls and diagnostics, ignores pointer input, and is hidden afterward.
+
+Only the focused tail's stop-scheduling clock is stretched by 20%; actual reel motion and bounce still use the original frame delta. Regular/bonus quick stop and Turbo retain their original timing. Bonus Buy uses the same presentation clock. Results, payouts and network commands are unchanged.
+
+Validation: all 144 automated tests, TypeScript and production build passed. Checks cover exact centre/zoom/easing values, 20% presentation-clock extension, normal/extended Bonus Buy bounce, unchanged fast-stop motion and vignette reuse/reset. No Computer Use or live monetary gameplay was used.
