@@ -72,3 +72,8 @@ Validation: all 153 automated tests, TypeScript and RGS production build passed.
 Hook tween and sparkle update (November 12, 2026): hooks follow a cubic Bezier with gentle rotation and easing, with flight speed increased by 15% (duration .8/1.15 seconds). Arrival gives a light 340ms squash/rebound and sparkle burst. Trails and soft glow use a fixed shared pool of 96 additive sprites and two procedural textures, with priority recycling for arrival bursts; no extra Spine, filters or timers. Cleanup restores socket transforms and hides particles. Upper hooks grow from 41 to 49 units, spacing narrows from 42 to 37, and the Bonus title moves up 11 units. Vignette area increases 15% to 48.3vw/48.3dvh and opacity increases 15%, clamped at full opacity.
 
 Validation: 155 automated tests passed; targeted hook tests passed again after prioritizing bursts in the full pool. TypeScript and RGS production build passed. Server outcomes, rewards and pearl flights remain unchanged.
+
+
+Hook effects tuning (November 12, 2026): upper hook row lifted by 6 design units. Arrival squash/rebound and rotation are slightly stronger; burst grows to 18 sparks with a larger, brighter glow. Trail glow and sparks are larger and more active, emitted every 28ms instead of 35ms. The fixed 96-sprite pool and priority recycling remain. Vignette mid-gradient opacity increases from a1 to b3; size and blur are unchanged.
+
+Validation: all 155 automated tests, TypeScript and RGS production build passed. Impact completion/reset still restores the original socket transform exactly.
