@@ -67,3 +67,8 @@ Validation: all 150 automated tests, TypeScript and production build passed. The
 Hook flight update (November 12, 2026): darker corner vignette; bonus descent begins once at 35% of the fish-mask opening. Flying hooks now start at the actual matrix Spine mesh size and smoothly shrink to the upper socket size. Flights and upper silhouettes use shared hook-only artwork prepared once from the two original hook meshes, without BONUS letters/glows. Original matrix symbol art and server/game rules are unchanged.
 
 Validation: all 153 automated tests, TypeScript and RGS production build passed. Tests cover real hook geometry, letter-free shared texture, matrix/camera transforms, flight sizes and one-time arrival, and the 35% reveal callback. No Computer Use or live monetary gameplay was used.
+
+
+Hook tween and sparkle update (November 12, 2026): hooks follow a cubic Bezier with gentle rotation and easing, with flight speed increased by 15% (duration .8/1.15 seconds). Arrival gives a light 340ms squash/rebound and sparkle burst. Trails and soft glow use a fixed shared pool of 96 additive sprites and two procedural textures, with priority recycling for arrival bursts; no extra Spine, filters or timers. Cleanup restores socket transforms and hides particles. Upper hooks grow from 41 to 49 units, spacing narrows from 42 to 37, and the Bonus title moves up 11 units. Vignette area increases 15% to 48.3vw/48.3dvh and opacity increases 15%, clamped at full opacity.
+
+Validation: 155 automated tests passed; targeted hook tests passed again after prioritizing bursts in the full pool. TypeScript and RGS production build passed. Server outcomes, rewards and pearl flights remain unchanged.
