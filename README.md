@@ -62,3 +62,8 @@ The entrance controller reuses the existing frame update, has no independent tim
 Damped double rebound (November 12, 2026): vignette dimensions increase from 35% to 42% (+20%) and colour opacity increases by approximately 10%; the 3px soft corner blur is retained. Bonus-matrix descent now starts once at the 50% timeline point of the fish-mask opening, after the hidden matrix swap. The same heavy 32-unit fall is followed by two diminishing rebounds (+7, then +2.5 units), settling exactly at rest over 900ms. HUD moves in sync; input and rules remain gated until landing completes.
 
 Validation: all 150 automated tests, TypeScript and production build passed. The actual transition was tested to invoke the midpoint callback only during opening and only once. Bought/earned entry tests cover overlap with reveal and completion gating; sampled motion has exactly two diminishing peaks, with stable rest position across frame rates and repeated entry.
+
+
+Hook flight update (November 12, 2026): darker corner vignette; bonus descent begins once at 35% of the fish-mask opening. Flying hooks now start at the actual matrix Spine mesh size and smoothly shrink to the upper socket size. Flights and upper silhouettes use shared hook-only artwork prepared once from the two original hook meshes, without BONUS letters/glows. Original matrix symbol art and server/game rules are unchanged.
+
+Validation: all 153 automated tests, TypeScript and RGS production build passed. Tests cover real hook geometry, letter-free shared texture, matrix/camera transforms, flight sizes and one-time arrival, and the 35% reveal callback. No Computer Use or live monetary gameplay was used.
