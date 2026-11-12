@@ -77,3 +77,8 @@ Validation: 155 automated tests passed; targeted hook tests passed again after p
 Hook effects tuning (November 12, 2026): upper hook row lifted by 6 design units. Arrival squash/rebound and rotation are slightly stronger; burst grows to 18 sparks with a larger, brighter glow. Trail glow and sparks are larger and more active, emitted every 28ms instead of 35ms. The fixed 96-sprite pool and priority recycling remain. Vignette mid-gradient opacity increases from a1 to b3; size and blur are unchanged.
 
 Validation: all 155 automated tests, TypeScript and RGS production build passed. Impact completion/reset still restores the original socket transform exactly.
+
+
+Shell multiplier effects and presentation gates (November 12, 2026): shell multipliers now use the same Bezier flight, rotation, pooled sparkle trail and arrival burst as hooks, with the counter pulse on arrival. The Add Spins heading is raised 13 design units above the sockets. Bonus entry waits for all actual hook arrivals instead of a fixed timer. Final bonus reward waits for all reels, bounces and landing animations, plus hook/multiplier flights; pending rotation is allowed to finish before switching the presentation phase. HUD cleanup cancels stale waits. No rewards, server outcomes or network commands are changed.
+
+Validation covers late hook arrivals, multiple reels, active bounce/landing, stale pooled-symbol versions, wait cancellation, bought/earned bonus entry, reward gating without interrupting spin updates, and shell flight/burst/counter pulse. TypeScript and RGS production build passed.
