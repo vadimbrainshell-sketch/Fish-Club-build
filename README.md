@@ -91,3 +91,10 @@ Build-time scene compaction removes only ignored editor metadata, preserving obj
 Validation: all 161 automated tests, TypeScript and RGS production build passed. A real Pixi transform-work regression with 500 static descendants across 120 zoom steps eliminates 60,000 redundant leaf transform updates and preserves screen coordinates; this is not an in-browser FPS benchmark. Main entry: 460,485 -> 401,979 bytes (gzip 89,929 -> 79,472). Font: 332,488 -> 126,468 bytes. Published asset/HTML/manifest total: 9,470,639 -> 9,206,844 bytes. No textures were downscaled and no visual effects were disabled.
 
 References: https://pixijs.com/8.x/guides/concepts/render-groups and https://pixijs.com/8.x/guides/components/scene-objects/container/cache-as-texture . Computer Use/browser automation remained disabled; actual browser FPS has not been measured.
+
+
+Gold bonus frame optimization (November 12, 2026): the old 1788x1245 full texture was already displayed as two pieces, but retained a large transparent centre. It is now loaded as four lossless WebP edge strips, with two original guard pixels at internal seams. All RGBA pixels in the crops were compared exactly to the original; the excluded centre is fully transparent. Original decoded pixels: 2,226,060 -> 1,152,540 (-48.22%). File bytes: 1,039,720 -> 985,260 (-5.24%). The source image remains in the development project and is not loaded or published by this build.
+
+Header deformation, logo placement and the original header/body mapping are preserved, including seven painted rows just below the old seam. Four images use five display nodes (one existing header mesh plus four body sprites); no filters or timers were added. The vignette is slightly darker, retaining its current size, blur and animation.
+
+Validation: all 163 automated tests, TypeScript and RGS production build passed. Tests cover actual geometry, UV frames, guarded seams, texture area, and the actual scene loader skipping the old image while completing all loading milestones. Gameplay, bonus drop and camera animations are unchanged.
