@@ -105,3 +105,6 @@ Collect alignment and win/sky presentation (November 13, 2026): the root golden 
 The sky has three slow pooled twinkles that reappear in different positions, plus one rare fading meteor (at most four moving stars). Positions are limited to the visible sky above the water, including after resize. Both effects use the existing application update; no new tickers/timers/filters or game/network changes. Coin art is a small inline vector.
 
 Validation: all 173 automated tests, TypeScript and RGS production build passed. Actual Spine tests cover all seven fish/pearl variants over repeated Collect cycles with exact backdrop bounds and unchanged fish poses. Additional checks cover a three-minute sky simulation, pooled fountain reuse/cleanup and banner squash/stretch restoration.
+
+
+Reward coin clipping fix (November 13, 2026): the shared dialog style had overflow:auto, clipping coins that travelled beyond the reward window. Only the reward dialog now uses overflow:visible with a more specific selector. Coins remain behind the title and cannot intercept input; other dialogs keep scrolling. Physics, timing and the 24-element pool are unchanged. Validation: 12 targeted reward/effect tests, TypeScript and RGS production build passed.
