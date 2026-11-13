@@ -108,3 +108,8 @@ Validation: all 173 automated tests, TypeScript and RGS production build passed.
 
 
 Reward coin clipping fix (November 13, 2026): the shared dialog style had overflow:auto, clipping coins that travelled beyond the reward window. Only the reward dialog now uses overflow:visible with a more specific selector. Coins remain behind the title and cannot intercept input; other dialogs keep scrolling. Physics, timing and the 24-element pool are unchanged. Validation: 12 targeted reward/effect tests, TypeScript and RGS production build passed.
+
+
+Nonblocking decorative flights (November 13, 2026): continuing bonus results return to the next playable state immediately after reels/bounces stop; hook-arrival waiting and the extra 450ms pause are removed from that path. Retained hook/pearl flights continue during the next spin and arrive once. Existing cleanup still removes flights when a symbol is actually replaced/reused. Ordinary base results already had no decorative-flight wait.
+
+Bonus entry now explicitly waits for all base hook and pearl flights, plus reel/landing completion. The final bonus reward keeps its full presentation gate. Network/pending/Collect/modal guards, manual spin controls, server awards and payouts are unchanged. Validation: all 173 automated tests, TypeScript and RGS production build passed, including retained flights during the next spin, retrigger continuation, terminal reward gating and bought/earned intro waiting.
