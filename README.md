@@ -98,3 +98,10 @@ Gold bonus frame optimization (November 12, 2026): the old 1788x1245 full textur
 Header deformation, logo placement and the original header/body mapping are preserved, including seven painted rows just below the old seam. Four images use five display nodes (one existing header mesh plus four body sprites); no filters or timers were added. The vignette is slightly darker, retaining its current size, blur and animation.
 
 Validation: all 163 automated tests, TypeScript and RGS production build passed. Tests cover actual geometry, UV frames, guarded seams, texture area, and the actual scene loader skipping the old image while completing all loading milestones. Gameplay, bonus drop and camera animations are unchanged.
+
+
+Collect alignment and win/sky presentation (November 13, 2026): the root golden Collect backdrop now fits the symbol's 220x225 cell-centred rectangle instead of inheriting each fish's different offset/scale. Only that backdrop's world matrix is adjusted while Collect plays; fish and sweep animation poses are retained, with no drift on reuse. Bonus reward adds a small 24-element pooled fountain of gold coins with fish engraving behind the title. Tier changes use a 620ms cartoon squash/stretch with diminishing rebounds and cancel the previous title animation. Exit hides/detaches the fountain and cancels animations.
+
+The sky has three slow pooled twinkles that reappear in different positions, plus one rare fading meteor (at most four moving stars). Positions are limited to the visible sky above the water, including after resize. Both effects use the existing application update; no new tickers/timers/filters or game/network changes. Coin art is a small inline vector.
+
+Validation: all 173 automated tests, TypeScript and RGS production build passed. Actual Spine tests cover all seven fish/pearl variants over repeated Collect cycles with exact backdrop bounds and unchanged fish poses. Additional checks cover a three-minute sky simulation, pooled fountain reuse/cleanup and banner squash/stretch restoration.
