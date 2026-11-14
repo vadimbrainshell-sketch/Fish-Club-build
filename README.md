@@ -130,3 +130,6 @@ Validation: all 186 automated tests, TypeScript and RGS production build passed.
 
 
 Portrait composition refinement (November 15, 2026): the gull node and buoy shadow are disabled in portrait, including Spine updates, and the original activation state returns in landscape without restarting the animation. The fisherman is horizontally centred within the safe area. The matrix sits lower, closer to the screen centre, while preserving the complete board and spacing above controls. Landscape layout, gameplay and pooled objects are unchanged. Validation: all 188 tests, TypeScript and RGS build passed.
+
+
+Portrait fisherman visibility (November 15, 2026): both fisherman and gull now pause and hide in portrait, together with their water shadows. The lantern reflection is also disabled while the fisherman is hidden. Original activation states, animation tracks and shadows resume in landscape; the lowered matrix position and game rules remain unchanged. Validation: 188 tests, TypeScript and RGS production build passed.
